@@ -1,5 +1,7 @@
 {
   "name": "reserva-ya",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

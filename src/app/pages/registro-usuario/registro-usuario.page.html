@@ -1,0 +1,59 @@
+<app-header-back [titulo]="titulo"></app-header-back>
+
+<ion-content fullscreen class="ion-padding-start ion-padding-end ion-padding-top">
+  <form [formGroup]="form" (ngSubmit)="registrar()" novalidate>
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input formControlName="vNombre"></ion-input>
+    </ion-item>
+    <print-error [control]="f.vNombre"></print-error>
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input formControlName="vEmail" type="email"></ion-input>
+    </ion-item>
+    <print-error [control]="f.vEmail"></print-error>
+    <ion-item>
+      <ion-label position="stacked">Celular</ion-label>
+      <ion-input formControlName="vCelular" type="number" ></ion-input>
+    </ion-item>
+    <print-error [control]="f.vCelular"></print-error>
+    <ion-item>
+      <ion-label position="stacked">Fecha</ion-label>
+      <ion-datetime formControlName="vFecha" displayFormat="DD/MM/YYYY" min="1994-03-14" max="2080-12-09"></ion-datetime>
+    </ion-item>
+    <print-error [control]="f.vFecha"></print-error>
+    <ion-item>
+      <ion-label position="stacked">País</ion-label>
+      <ion-select formControlName="vPais" interface="popover" placeholder="Selecciona uno" okText="Okay" cancelText="Cancelar">
+        <ion-select-option value="BOLIVIA">Bolivia</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <print-error [control]="f.vPais"></print-error>
+    <ion-item>
+      <ion-label position="stacked">Ciudad</ion-label>
+      <ion-select formControlName="vCiudad" interface="popover" placeholder="Selecciona uno" okText="Okay" cancelText="Cancelar">
+        <ion-select-option value="LA PAZ">La Paz</ion-select-option>
+        <ion-select-option value="COCHABAMBA">Cochabamba</ion-select-option>
+        <ion-select-option value="SANTA CRUZ">Santa Cruz</ion-select-option>
+        <ion-select-option value="ORURO">Oruro</ion-select-option>
+        <ion-select-option value="POTOSI">Potosí</ion-select-option>
+        <ion-select-option value="SUCRE">Sucre</ion-select-option>
+        <ion-select-option value="TARIJA">Tarija</ion-select-option>
+        <ion-select-option value="PANDO">Pando</ion-select-option>
+        <ion-select-option value="BENI">Beni</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <print-error [control]="f.vCiudad"></print-error>
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input formControlName="vPassword" type="password" ></ion-input>
+    </ion-item>
+    <print-error [control]="f.vPassword"></print-error>
+    <ion-item>
+      <ion-label #confPass position="stacked">Confirmar Contraseña</ion-label>
+      <ion-input type="password" formControlName="vConfirmPass" name="vConfirmPass" ></ion-input>
+    </ion-item>
+    <print-error [control]="f.vConfirmPass"></print-error>
+    <ion-button color="tertiary" [disabled]="form.invalid" expand="block">Registrarme</ion-button>
+  </form>
+</ion-content>

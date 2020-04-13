@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ionic-e425f": {
+      "hosting": {
+        "app": [
+          "ionic-e425f"
+        ]
+      }
+    }
+  }
+}
