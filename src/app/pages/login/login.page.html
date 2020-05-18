@@ -5,12 +5,12 @@
     <form [formGroup]="form" novalidate>
       <ion-item>
         <ion-label position="stacked">Usuario</ion-label>
-        <ion-input formControlName="vEmail" type="email"></ion-input>
+        <ion-input formControlName="vEmail" type="email" [(ngModel)]="usuario"></ion-input>
       </ion-item>
       <print-error [control]="f.vEmail"></print-error>
       <ion-item>
         <ion-label position="stacked">Password</ion-label>
-        <ion-input formControlName="vPass" type="password"></ion-input>
+        <ion-input formControlName="vPass" type="password" [(ngModel)]="pass"></ion-input>
       </ion-item>
       <print-error [control]="f.vPass"></print-error>
       <ion-button [disabled]="form.invalid" color="tertiary" (click)="ingresar()" expand="block">Ingresar</ion-button>

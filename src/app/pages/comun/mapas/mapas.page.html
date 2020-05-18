@@ -1,9 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>mapas</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Seleccione una posición</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div #mapElement class="map"></div>
+  <div #centerMarker id="centerMarker"></div>
+      
+    <ion-fab (click)="guardarLatLong()"  vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="secondary">
+        <ion-icon name="navigate"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
 </ion-content>

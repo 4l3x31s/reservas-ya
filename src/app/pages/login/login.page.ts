@@ -10,6 +10,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class LoginPage implements OnInit {
   public titulo = 'Inicio';
   form: FormGroup;
+  usuario: string = "asd@asd.com";
+  pass: string = "asdasda";
   constructor(
     public menuCtrl: MenuController,
     public fb: FormBuilder,

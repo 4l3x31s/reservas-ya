@@ -8,6 +8,7 @@ import { RegistroEmpresaPageRoutingModule } from './registro-empresa-routing.mod
 
 import { RegistroEmpresaPage } from './registro-empresa.page';
 import { ComponentsModule } from '../../components/components.module';
+import { MapasPageModule } from '../comun/mapas/mapas.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { ComponentsModule } from '../../components/components.module';
     IonicModule,
     RegistroEmpresaPageRoutingModule,
     ComponentsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MapasPageModule
   ],
   declarations: [RegistroEmpresaPage]
 })

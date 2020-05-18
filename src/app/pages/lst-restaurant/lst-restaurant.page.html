@@ -1,0 +1,14 @@
+<app-header-back [titulo]="titulo"></app-header-back>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Categorías</ion-label>
+    <ion-select interface="popover" placeholder="Select One" *ngFor="let item of lstCategorias" [(ngModel)]="categoriaSeleccionada">
+      <ion-select-option value="{{item.categoria}}">{{item.categoria | titlecase}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+
+  </ion-item>
+
+</ion-content>

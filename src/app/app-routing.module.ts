@@ -54,6 +54,42 @@ const routes: Routes = [
   {
     path: 'confirmar-reserva',
     loadChildren: () => import('./pages/confirmar-reserva/confirmar-reserva.module').then( m => m.ConfirmarReservaPageModule)
+  },
+  {
+    path: 'registrar-categoria',
+    loadChildren: () => import('./pages/registrar-categoria/registrar-categoria.module').then( m => m.RegistrarCategoriaPageModule)
+  },
+  {
+    path: 'registrar-ciudad',
+    loadChildren: () => import('./pages/registrar-ciudad/registrar-ciudad.module').then( m => m.RegistrarCiudadPageModule)
+  },
+  {
+    path: 'lista-categorias',
+    loadChildren: () => import('./pages/lista-categorias/lista-categorias.module').then( m => m.ListaCategoriasPageModule)
+  },
+  {
+    path: 'lista-ciudades',
+    loadChildren: () => import('./pages/lista-ciudades/lista-ciudades.module').then( m => m.ListaCiudadesPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'lst-restaurant',
+    loadChildren: () => import('./pages/lst-restaurant/lst-restaurant.module').then( m => m.LstRestaurantPageModule)
+  },
+  {
+    path: 'lis-empresa',
+    loadChildren: () => import('./pages/lis-empresa/lis-empresa.module').then( m => m.LisEmpresaPageModule)
+  },
+  {
+    path: 'lis-sucursales',
+    loadChildren: () => import('./pages/lis-sucursales/lis-sucursales.module').then( m => m.LisSucursalesPageModule)
+  },
+  {
+    path: 'lista-sucursales-us',
+    loadChildren: () => import('./pages/lista-sucursales-us/lista-sucursales-us.module').then( m => m.ListaSucursalesUsPageModule)
   }
 ];
 

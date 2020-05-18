@@ -5,13 +5,15 @@ import { IonicModule } from '@ionic/angular';
 import { PrintErrorComponent } from './print-error/print-error.component';
 import { HeaderBackComponent } from './header-back/header-back.component';
 import { SubirImagenComponent } from './subir-imagen/subir-imagen.component';
+import { UploadCompressComponent } from './upload-compress/upload-compress.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     PrintErrorComponent,
     HeaderBackComponent,
-    SubirImagenComponent
+    SubirImagenComponent,
+    UploadCompressComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { SubirImagenComponent } from './subir-imagen/subir-imagen.component';
     HeaderComponent,
     PrintErrorComponent,
     HeaderBackComponent,
-    SubirImagenComponent
+    SubirImagenComponent,
+    UploadCompressComponent
   ]
 })
 export class ComponentsModule { }

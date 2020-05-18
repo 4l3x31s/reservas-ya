@@ -12,7 +12,7 @@ export class LoadingService {
     this.isLoading = true;
     return await this.loadingController.create({
       spinner: null,
-      cssClass: 'spiner-loading'
+      cssClass: 'custom-loader',
     }).then(a => {
       const datoa: any = a;
       datoa.present().then(() => {

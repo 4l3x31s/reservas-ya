@@ -1,0 +1,32 @@
+<app-header-back [titulo]="titulo"></app-header-back>
+<ion-content fullscreen>
+  <ion-grid>
+    <ion-row class="cabecera-tabla">
+      <ion-col size="4" class="ion-align-self-center">
+        Empresa
+      </ion-col>
+      <ion-col size="4" class="ion-align-self-center">
+        Teléfono
+      </ion-col>
+      <ion-col size="4" class="ion-align-self-center">
+        Celular
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of lstSucursales" nowrap (click)="irSucursal(item)" class="cuerpo-tabla" >
+      <ion-col size="4" class="ion-align-self-start">
+        {{item.nombre}}
+      </ion-col>
+      <ion-col size="4" class="ion-align-self-start">
+        {{item.telefono}}
+      </ion-col>
+      <ion-col size="4" class="ion-align-self-start">
+        {{item.celular}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="irRegSucursal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

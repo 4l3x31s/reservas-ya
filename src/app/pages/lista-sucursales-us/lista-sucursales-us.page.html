@@ -1,0 +1,25 @@
+<app-header-back [titulo]="titulo"></app-header-back>
+
+
+<ion-content>
+
+  <ion-chip  color="secondary" *ngFor="let item of lstCategorias">
+      <ion-icon name="{{item.icon}}"></ion-icon>
+      <ion-checkbox [(ngModel)]="item.checked" (click)="cambioCheck(item)"></ion-checkbox>
+  </ion-chip>
+
+  <br />
+  <ion-card *ngFor="let item of lisSucursal">
+    <subir-imagen  titulo="Imagen Sucursal" [urlImagen]="'empresa/sucursal/'+ item.id +'-sucursal'"></subir-imagen>
+    <ion-card-header>
+      <ion-card-subtitle>{{item.nombreEmpresa}}</ion-card-subtitle>
+      <ion-card-title>{{item.nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{item.direccion}}
+    </ion-card-content>
+    <ion-item>
+      <ion-button fill="outline" slot="end">Entrar</ion-button>
+    </ion-item>
+  </ion-card>
+</ion-content>

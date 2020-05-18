@@ -1,9 +1,81 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>registro-sucursal</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header-back [titulo]="titulo"></app-header-back>
 
-<ion-content>
+<ion-content fullscreen >
+  <form [formGroup]="form"  novalidate >
+    <ion-list>
+      <ion-item-group>
+        <ion-item-divider color="secondary">
+          <ion-label>SUCURSALES</ion-label>
+        </ion-item-divider>
+        <ion-item>
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input formControlName="vNombre" type="text" [(ngModel)]="sucursal.nombre" ></ion-input>
+        </ion-item>
+        <print-error [control]="f.vNombre"></print-error>
+        <ion-item>
+          <ion-label position="stacked">Telefono</ion-label>
+          <ion-input formControlName="vTelefono" type="number" [(ngModel)]="sucursal.telefono" ></ion-input>
+        </ion-item>
+        <print-error [control]="f.vTelefono"></print-error>
+        <ion-item>
+          <ion-label position="stacked">Celular</ion-label>
+          <ion-input formControlName="vCelular" type="number" [(ngModel)]="sucursal.celular"></ion-input>
+        </ion-item>
+        <print-error [control]="f.vCelular"></print-error>
+        
+        <ion-item>
+          <ion-label position="stacked">Dirección</ion-label>
+          <ion-textarea formControlName="vDireccion" [(ngModel)]="sucursal.direccion"></ion-textarea>
+        </ion-item>
+        <print-error [control]="f.vDireccion"></print-error>
+        <ion-item>
+          <ion-label position="stacked">Ubicación</ion-label>
+          <ion-textarea formControlName="vUbicacion" readonly="true" (click)="abrirModal()" [(ngModel)]="strUbicacion" ></ion-textarea>
+        </ion-item>
+        <print-error [control]="f.vUbicacion"></print-error>
+        <ion-item>
+          <ion-label position="stacked">País</ion-label>
+          <ion-select formControlName="vPais" interface="popover" placeholder="Selecciona uno" okText="Okay" cancelText="Cancelar" [(ngModel)]="sucursal.pais">
+            <ion-select-option value="BOLIVIA">Bolivia</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <print-error [control]="f.vPais"></print-error>
+        <ion-item>
+          <ion-label position="stacked">Ciudad</ion-label>
+          <ion-select formControlName="vCiudad" interface="popover" placeholder="Selecciona uno" okText="Okay" cancelText="Cancelar" [(ngModel)]="sucursal.ciudad">
+            <ion-select-option value="LA PAZ">La Paz</ion-select-option>
+            <ion-select-option value="COCHABAMBA">Cochabamba</ion-select-option>
+            <ion-select-option value="SANTA CRUZ">Santa Cruz</ion-select-option>
+            <ion-select-option value="ORURO">Oruro</ion-select-option>
+            <ion-select-option value="POTOSI">Potosí</ion-select-option>
+            <ion-select-option value="SUCRE">Sucre</ion-select-option>
+            <ion-select-option value="TARIJA">Tarija</ion-select-option>
+            <ion-select-option value="PANDO">Pando</ion-select-option>
+            <ion-select-option value="BENI">Beni</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <print-error [control]="f.vCiudad"></print-error>
+        <ion-item>
+          <ion-label position="stacked">Categoria</ion-label>
+          <ion-select formControlName="vCategoria" *ngFor="let item of lstCategorias" interface="popover" placeholder="Selecciona uno" okText="Okay" cancelText="Cancelar" [(ngModel)]="sucursal.categoria">
+            <ion-select-option value="{{item.categoria}}">{{item.categoria}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <print-error [control]="f.vCategoria"></print-error>
+        <ion-item>
+          <ion-label >Habilitado</ion-label>
+          <ion-toggle formControlName="vEstado" color="primary" [(ngModel)]="sucursal.estado"></ion-toggle>
+        </ion-item>
+        <print-error [control]="f.vEstado"></print-error>
+      </ion-item-group>
+      <ion-item-group *ngIf="mostrarImagen">
+        <ion-item-divider color="secondary">
+          <ion-label>IMAGEN SUCURSAL</ion-label>
+        </ion-item-divider>
+        <app-upload-compress  titulo="Imagen Sucursal" [urlImagen]="'empresa/sucursal/'+this.sucursal.id+'-sucursal'"></app-upload-compress>
+      </ion-item-group>
+    </ion-list>
 
+    <ion-button color="tertiary" [disabled]="form.invalid" (click)="registrar()" expand="block">Registrarme</ion-button>
+  </form>
 </ion-content>

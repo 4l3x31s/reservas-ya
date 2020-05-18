@@ -1,0 +1,21 @@
+<app-header-back [titulo]="titulo"></app-header-back>
+
+<ion-content fullscreen >
+  <form [formGroup]="form" novalidate >
+    <ion-item>
+      <ion-label position="stacked">País</ion-label>
+        <ion-input formControlName="vPais" [(ngModel)]="ciudad.pais"></ion-input>
+      </ion-item>
+      <print-error [control]="f.vPais"></print-error>
+      <ion-item>
+        <ion-label position="stacked">Ciudad</ion-label>
+        <ion-input formControlName="vCiudad" type="text" [(ngModel)]="ciudad.ciudad"></ion-input>
+      </ion-item>
+      <print-error [control]="f.vCiudad"></print-error>
+      <ion-item>
+        <ion-label >Habilitado</ion-label>
+        <ion-toggle color="primary" [ngModelOptions]="{standalone: true}" [(ngModel)]="ciudad.estado" checked></ion-toggle>
+      </ion-item>
+    <ion-button color="tertiary" [disabled]="form.invalid" expand="block" (click)="registrar()" >Registrar</ion-button>
+  </form>
+</ion-content>

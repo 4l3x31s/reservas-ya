@@ -214,7 +214,22 @@
     --ion-item-background: #1A1B1E;
   }
 
-  ion-title.title-large {
-    --color: white;
-  }
+  
+  
+}
+ion-title.title-large {
+  --color: white;
+}
+
+.cabecera-tabla{
+  text-align: center;
+  font-weight: bold;
+  background-color: var(--ion-color-primary) !important;
+  color: var(--ion-color-primary-contrast) !important;
+  padding: 10px 10px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+.cuerpo-tabla {
+  padding: 3px 1px;
 }

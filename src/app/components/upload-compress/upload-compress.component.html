@@ -1,0 +1,26 @@
+<ion-card>
+  <ion-item *ngIf="mostrarBotones">
+    <ion-label>{{titulo}}</ion-label>
+    <ion-icon *ngIf="urlImagenFirebase" slot="end" name="trash" (click)="eliminarImagen()"></ion-icon>
+  </ion-item>
+  <div *ngIf="urlImagenFirebase">
+    <img [src]="urlImagenFirebase" />
+  </div>
+  <ion-spinner *ngIf="cargandoImagen"></ion-spinner>
+  <div *ngIf="mostrarBotones" class="fileUpload">
+    <span>Cargar Imagen</span>
+    <input type="file" accept="image/*" class="upload" (change)='change($event.target.files)'>
+  </div>
+</ion-card>
+<!--
+<div class="fileUpload">
+  <span>Cargar Imagen</span>
+  <input type="file" accept="image/*" class="upload" (change)='change($event.target.files)'>
+</div>
+<ion-card>
+  <div *ngIf="compressedImages ">
+    <div *ngFor="let image of compressedImages | async" >
+      <img [src]='sanitize(image.imgUrl)'>
+    </div>
+  </div>
+</ion-card>-->

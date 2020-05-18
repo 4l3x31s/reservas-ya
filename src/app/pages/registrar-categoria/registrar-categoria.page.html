@@ -1,0 +1,16 @@
+<app-header-back [titulo]="titulo"></app-header-back>
+
+<ion-content fullscreen >
+  <form [formGroup]="form" novalidate >
+    <ion-item>
+      <ion-label position="stacked">Categoria</ion-label>
+        <ion-input formControlName="vCategoria" [(ngModel)]="categoria.categoria"></ion-input>
+      </ion-item>
+      <print-error [control]="f.vCategoria"></print-error>
+      <ion-item>
+        <ion-label >Estado</ion-label>
+        <ion-toggle color="primary" [ngModelOptions]="{standalone: true}" [(ngModel)]="categoria.estado" checked></ion-toggle>
+      </ion-item>
+    <ion-button color="tertiary" [disabled]="form.invalid" expand="block" (click)="registrar()" >Registrar</ion-button>
+  </form>
+</ion-content>

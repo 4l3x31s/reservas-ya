@@ -39,7 +39,9 @@
                 "input": "src/global.scss"
               }
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/image-compressor.js/dist/image-compressor.min.js"
+            ]
           },
           "configurations": {
             "production": {

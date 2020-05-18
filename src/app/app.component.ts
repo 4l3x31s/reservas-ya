@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
       icon: 'mail'
     },
     {
-      title: 'Inicio',
-      url: '/inicio',
+      title: 'Home',
+      url: '/home',
       icon: 'paper-plane'
     },
     {
@@ -55,6 +55,7 @@ export class AppComponent implements OnInit {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleLightContent();
+      this.statusBar.backgroundColorByHexString('#df6323');
       this.splashScreen.hide();
     });
   }

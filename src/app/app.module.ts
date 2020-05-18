@@ -21,9 +21,13 @@ import { MediaCapture } from '@ionic-native/media-capture/ngx';
 import { Media } from '@ionic-native/media/ngx';
 import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
+import { CiudadesService } from './api/db/ciudades.service';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { SlidesAnimationsService } from './api/slides-animations.service';
+import { ImgCompressorDirective } from './img-compressor.directive';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ImgCompressorDirective],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -33,6 +37,7 @@ import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
     ComponentsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
   providers: [
     StatusBar,
@@ -44,6 +49,8 @@ import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
     Media,
     StreamingMedia,
     PhotoViewer,
+    CiudadesService,
+    SlidesAnimationsService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
